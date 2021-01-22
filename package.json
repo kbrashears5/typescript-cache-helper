@@ -21,7 +21,7 @@
     "main": "lib/index.js",
     "dependencies": {
         "node-cache": "~5.1.2",
-        "typescript-helper-functions": "~1.0.100"
+        "typescript-helper-functions": "~1.0.105"
     },
     "devDependencies": {
         "@types/jest": "~26.0.20",
