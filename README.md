@@ -8,14 +8,17 @@
 
 [![npm](https://img.shields.io/npm/v/typescript-cache-helper)](https://img.shields.io/npm/v/typescript-cache-helper)
 [![Downloads](https://img.shields.io/npm/dt/typescript-cache-helper)](https://img.shields.io/npm/dt/typescript-cache-helper)
+
 </div>
 
 ## Installation
+
 ```
 npm i typescript-cache-helper@latest -g
 ```
 
 ## Usage
+
 ```typescript
 const cacheHelper = new CacheHelper(['cache-name'], 300);
 
