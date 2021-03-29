@@ -24,7 +24,7 @@
     "typescript-helper-functions": "~1.0.119"
   },
   "devDependencies": {
-    "@types/jest": "~26.0.20",
+    "@types/jest": "~26.0.22",
     "@types/node": "~14.14.34",
     "@typescript-eslint/eslint-plugin": "~4.17.0",
     "@typescript-eslint/parser": "~4.17.0",
