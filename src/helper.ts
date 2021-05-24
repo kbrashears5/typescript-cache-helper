@@ -18,13 +18,15 @@ export class CacheHelper implements ICacheHelper {
    * @param cacheNames {string[]} List of cache names
    * @param cacheExpirationSeconds {number} Time to expiration for the cache in seconds
    */
-  constructor(cacheNames: string[], cacheExpirationSeconds: number = 300) {
+  constructor(cacheNames: string[], cacheExpirationSeconds = 300) {
     this.ObjectOperations = new ObjectOperations();
 
-    if (this.ObjectOperations.IsNullOrEmpty(cacheNames))
+    if (this.ObjectOperations.IsNullOrEmpty(cacheNames)) {
       throw new Error(`Value cannot be null or undefined: [cacheNames]`);
-    if (cacheNames.length < 1)
+    }
+    if (cacheNames.length < 1) {
       throw new Error(`Value cannot be null or undefined: [cacheNames]`);
+    }
 
     this.Caches = [];
 
@@ -37,17 +39,20 @@ export class CacheHelper implements ICacheHelper {
    * @param key {string} Cache item key
    * @param value {string} Cache item value
    */
-  public Add(cacheName: string, key: string, value: object): boolean {
+  public Add(cacheName: string, key: string, value: any): boolean {
     const action = `${CacheHelper.name}.${this.Add.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
-    if (this.ObjectOperations.IsNullOrWhitespace(key))
+    }
+    if (this.ObjectOperations.IsNullOrWhitespace(key)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [key]`);
-    if (this.ObjectOperations.IsNullOrEmpty(value))
+    }
+    if (this.ObjectOperations.IsNullOrEmpty(value)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [value]`);
+    }
 
     const cache = this.FindCache(cacheName);
 
@@ -62,12 +67,14 @@ export class CacheHelper implements ICacheHelper {
   public Delete(cacheName: string, key: string): boolean {
     const action = `${CacheHelper.name}.${this.Delete.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
-    if (this.ObjectOperations.IsNullOrWhitespace(key))
+    }
+    if (this.ObjectOperations.IsNullOrWhitespace(key)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [key]`);
+    }
 
     const cache = this.FindCache(cacheName);
 
@@ -83,16 +90,18 @@ export class CacheHelper implements ICacheHelper {
   public FindCache(cacheName: string): NodeCache {
     const action = `${CacheHelper.name}.${this.FindCache.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
+    }
 
     const cache = this.Caches.find((c) => c.Name === cacheName);
 
     if (this.ObjectOperations.IsNullOrEmpty(cache)) {
       throw new Error('Cache not found');
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return cache!.NodeCache;
     }
   }
@@ -104,10 +113,11 @@ export class CacheHelper implements ICacheHelper {
   public Flush(cacheName: string): void {
     const action = `${CacheHelper.name}.${this.Flush.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
+    }
 
     const cache = this.FindCache(cacheName);
 
@@ -119,15 +129,17 @@ export class CacheHelper implements ICacheHelper {
    * @param cacheName {string} Cache name
    * @param key {string} Cache item key
    */
-  public Get(cacheName: string, key: string): object | undefined {
+  public Get(cacheName: string, key: string): any | undefined {
     const action = `${CacheHelper.name}.${this.Get.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
-    if (this.ObjectOperations.IsNullOrWhitespace(key))
+    }
+    if (this.ObjectOperations.IsNullOrWhitespace(key)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [key]`);
+    }
 
     const cache = this.FindCache(cacheName);
 
@@ -145,10 +157,11 @@ export class CacheHelper implements ICacheHelper {
   ): void {
     const action = `${CacheHelper.name}.${this.Initialize.name}`;
 
-    if (this.ObjectOperations.IsNullOrEmpty(cacheNames))
+    if (this.ObjectOperations.IsNullOrEmpty(cacheNames)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheNames]`,
       );
+    }
 
     const options: NodeCache.Options = {
       stdTTL: cacheExpirationSeconds,
@@ -168,17 +181,20 @@ export class CacheHelper implements ICacheHelper {
    * @param key {string} Cache item key
    * @param value {object} Cache item value
    */
-  public Replace(cacheName: string, key: string, value: object): void {
+  public Replace(cacheName: string, key: string, value: any): void {
     const action = `${CacheHelper.name}.${this.Replace.name}`;
 
-    if (this.ObjectOperations.IsNullOrWhitespace(cacheName))
+    if (this.ObjectOperations.IsNullOrWhitespace(cacheName)) {
       throw new Error(
         `[${action}]-Value cannot be null or undefined: [cacheName]`,
       );
-    if (this.ObjectOperations.IsNullOrWhitespace(key))
+    }
+    if (this.ObjectOperations.IsNullOrWhitespace(key)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [key]`);
-    if (this.ObjectOperations.IsNullOrEmpty(value))
+    }
+    if (this.ObjectOperations.IsNullOrEmpty(value)) {
       throw new Error(`[${action}]-Value cannot be null or undefined: [value]`);
+    }
 
     const cacheItem = this.Get(cacheName, key);
 

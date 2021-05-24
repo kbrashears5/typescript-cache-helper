@@ -8,17 +8,17 @@ export class CacheMock extends BaseMock {
   /**
    * Mocks a Delete response
    */
-  public Delete: number = 1;
+  public Delete = 1;
 
   /**
    * Mocks a Get response
    */
-  public Get: object = { key: 'value' };
+  public Get = { key: 'value' };
 
   /**
    * Mocks a Set response
    */
-  public Set: boolean = true;
+  public Set = true;
 
   /**
    * Create the APIGateway mock
@@ -37,6 +37,7 @@ export class CacheMock extends BaseMock {
       // flush response
       flushAll: {
         response: () => {
+          // eslint-disable-next-line no-undefined
           return returnError ? rejectResponse : undefined;
         },
       },

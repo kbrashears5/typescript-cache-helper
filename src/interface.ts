@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as NodeCache from 'node-cache';
 
 /**
@@ -21,9 +22,9 @@ export interface ICacheHelper {
    * Store item in cache
    * @param cacheName {string} Cache name
    * @param key {string} Cache item key
-   * @param value {string} Cache item value
+   * @param value {any} Cache item value
    */
-  Add(cacheName: string, key: string, value: object): boolean;
+  Add(cacheName: string, key: string, value: any): boolean;
 
   /**
    * Delete item in cache
@@ -49,7 +50,7 @@ export interface ICacheHelper {
    * @param cacheName {string} Cache name
    * @param key {string} Cache item key
    */
-  Get(cacheName: string, key: string): object | undefined;
+  Get(cacheName: string, key: string): any | undefined;
 
   /**
    * Initialize the caches
@@ -62,7 +63,7 @@ export interface ICacheHelper {
    * Replace item in cache
    * @param cacheName {string} Cache name
    * @param key {string} Cache item key
-   * @param value {object} Cache item value
+   * @param value {any} Cache item value
    */
-  Replace(cacheName: string, key: string, value: object): void;
+  Replace(cacheName: string, key: string, value: any): void;
 }

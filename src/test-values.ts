@@ -3,25 +3,26 @@
  */
 export class TestingValues {
   // descriptions
-  public CacheError: string = 'Cache Error';
-  public InvalidTest: string = 'returns error';
-  public MustSupply: string = 'Value cannot be null or undefined:';
-  public ThrowsOnEmpty: string = 'throws on empty';
-  public ValidTest: string = 'returns valid response';
+  public CacheError = 'Cache Error';
+  public InvalidTest = 'returns error';
+  public MustSupply = 'Value cannot be null or undefined:';
+  public ThrowsOnEmpty = 'throws on empty';
+  public ValidTest = 'returns valid response';
 
   // empty values
   public EmptyArray = [];
   public EmptyObject = {};
-  public EmptyString: string = '';
+  public EmptyString = '';
 
   // strings
-  public CacheName: string = 'cache-name';
-  public Key: string = 'cache-key';
-  public Value: object = { key: 'cache-value' };
+  public CacheName = 'cache-name';
+  public Key = 'cache-key';
+  public Value = { key: 'cache-value' };
 
   // numbers
-  public CacheExpirationSeconds: number = 5;
+  public CacheExpirationSeconds = 5;
 
   // objects
+  // eslint-disable-next-line no-invalid-this
   public CacheNames: string[] = [this.CacheName];
 }
