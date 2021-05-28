@@ -1,6 +1,6 @@
 {
   "name": "typescript-cache-helper",
-  "version": "1.0.115",
+  "version": "1.0.116",
   "description": "Typescript Cache Helper",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "node-cache": "~5.1.2",
-    "typescript-helper-functions": "~1.0.150"
+    "typescript-helper-functions": "~1.0.151"
   },
   "devDependencies": {
     "@types/jest": "~26.0.23",
@@ -39,7 +39,7 @@
     "prettier": "~2.3.0",
     "rimraf": "~3.0.2",
     "ts-jest": "~27.0.1",
-    "typescript": "~4.2.4"
+    "typescript": "~4.3.2"
   },
   "files": [
     "LICENSE",
@@ -62,8 +62,8 @@
     "clean": "rimraf ./lib",
     "format": "prettier --write .",
     "lint": "eslint -c .eslintrc.yml \"*/**\"",
-    "postinstall": "node-git-hooks",
     "prebuild": "npm run clean && npm run format && npm run lint",
+    "prep": "npm run update && node-git-hooks",
     "test": "jest --ci --coverage",
     "update:eslint-config-prettier": "npm i eslint-config-prettier@latest --save-dev",
     "update:eslint-plugin-jest": "npm i eslint-plugin-jest@latest --save-dev",
@@ -83,6 +83,6 @@
     "update:typescript-eslint-plugin": "npm i @typescript-eslint/eslint-plugin@latest --save-dev",
     "update:typescript-helper-functions": "npm i typescript-helper-functions@latest",
     "update:typescript": "npm i typescript@latest --save-dev",
-    "update": "run-s update:* && npm run postinstall"
+    "update": "run-s update:*"
   }
 }

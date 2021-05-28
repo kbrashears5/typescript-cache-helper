@@ -2,9 +2,7 @@
 
 <div align="center">
     
-[![Build Status](https://dev.azure.com/kbrashears5/github/_apis/build/status/kbrashears5.typescript-cache-helper?branchName=master)](https://dev.azure.com/kbrashears5/github/_build/latest?definitionId=24&branchName=master)
-[![Tests](https://img.shields.io/azure-devops/tests/kbrashears5/github/24)](https://img.shields.io/azure-devops/tests/kbrashears5/github/24)
-[![Code Coverage](https://img.shields.io/azure-devops/coverage/kbrashears5/github/24)](https://img.shields.io/azure-devops/coverage/kbrashears5/github/24)
+[![CI/CD](https://github.com/kbrashears5/typescript-cache-helper/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/typescript-cache-helper/actions/workflows/ci-cd.yml)
 
 [![npm](https://img.shields.io/npm/v/typescript-cache-helper)](https://img.shields.io/npm/v/typescript-cache-helper)
 [![Downloads](https://img.shields.io/npm/dt/typescript-cache-helper)](https://img.shields.io/npm/dt/typescript-cache-helper)
@@ -24,3 +22,13 @@ const cacheHelper = new CacheHelper(['cache-name'], 300);
 
 cacheHelper.Add('cache-name', 'key', { 'key', 'value' });
 ```
+
+## Development
+
+Clone the latest and run
+
+```npm
+npm run prep
+```
+
+to install packages and prep the git hooks
