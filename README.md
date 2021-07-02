@@ -3,7 +3,7 @@
 <div align="center">
     
 [![CI/CD](https://github.com/kbrashears5/typescript-cache-helper/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/typescript-cache-helper/actions/workflows/ci-cd.yml)
-
+[![codecov](https://codecov.io/gh/kbrashears5/typescript-cache-helper/branch/master/graph/badge.svg?token=QDX7Z7TDN4)](https://codecov.io/gh/kbrashears5/typescript-cache-helper)
 [![npm](https://img.shields.io/npm/v/typescript-cache-helper)](https://img.shields.io/npm/v/typescript-cache-helper)
 [![Downloads](https://img.shields.io/npm/dt/typescript-cache-helper)](https://img.shields.io/npm/dt/typescript-cache-helper)
 

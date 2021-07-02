@@ -3,8 +3,11 @@
     "Autobuild",
     "Parens",
     "cobertura",
+    "codecov",
     "codeql",
+    "eqeqeq",
     "martinbeentjes",
+    "paren",
     "postpublish",
     "prebuild"
   ]
